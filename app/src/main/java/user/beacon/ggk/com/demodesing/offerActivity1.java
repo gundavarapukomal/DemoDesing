@@ -33,7 +33,7 @@ public class offerActivity1 extends Activity implements View.OnTouchListener, Ha
     private final Handler handler = new Handler(this);
     private EditText mEditText;
 
-    private boolean EditTExt_focuse ;
+    private boolean EditTExt_focuse=true;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -46,8 +46,13 @@ public class offerActivity1 extends Activity implements View.OnTouchListener, Ha
 
         if (EditTExt_focuse) {
             mEditText.setText("$50,000");
-        }
-        else{
+            mEditText.setCursorVisible(true);
+            mEditText.setLongClickable(true);
+            mEditText.setClickable(true);
+            mEditText.setFocusable(true);
+            mEditText.setSelected(true);
+        } else {
+            mEditText.setText("$50,000");
             mEditText.setCursorVisible(false);
             mEditText.setLongClickable(false);
             mEditText.setClickable(false);

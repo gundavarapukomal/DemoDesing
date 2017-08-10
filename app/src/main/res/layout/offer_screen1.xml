@@ -98,6 +98,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:textColor="@android:color/black"
+            android:textAlignment="center"
             android:textSize="18sp"
             android:drawableRight="@android:drawable/ic_delete"
             android:background="@android:color/transparent"
