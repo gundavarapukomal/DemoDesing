@@ -1,0 +1,81 @@
+{
+  "data": {
+    "id": "12345678907654321234567890",
+    "type": {
+      "id": "CREDIT_LIMIT_INCREASE",
+      "name": "Aumente la línea de crédito actualmente disponible para el cliente en su tarjeta."
+    },
+    "isEditable": true,
+    "details": {
+      "minimumAmount": [
+        {
+          "amount": 100,
+          "currency": "CLP"
+        },
+        {
+          "amount": 10,
+          "currency": "USD"
+        }
+      ],
+      "maximumAmount": [
+        {
+          "amount": 1000,
+          "currency": "CLP"
+        },
+        {
+          "amount": 100,
+          "currency": "USD"
+        }
+      ],
+      "allowedAmounts": [
+        {
+          "currency": "CLP",
+          "amounts": [
+            {
+              "amount": 100
+            },
+            {
+              "amount": 200
+            }
+          ]
+        },
+        {
+          "currency": "USD",
+          "amounts": [
+            {
+              "amount": 10
+            },
+            {
+              "amount": 20
+            }
+          ]
+        }
+      ],
+      "suggestedAmount": [
+        {
+          "amount": 500,
+          "currency": "CLP"
+        },
+        {
+          "amount": 50,
+          "currency": "USD"
+        }
+      ]
+    },
+    "rates": [
+      {
+        "rateType": {
+          "id": "CAT",
+          "name": "CAT"
+        },
+        "calculationDate": "2017-05-23",
+        "mode": {
+          "id": "PERCENTAGE"
+        },
+        "unit": {
+          "percentage": 38.2
+        }
+      }
+    ]
+  }
+}

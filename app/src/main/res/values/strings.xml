@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DemoDesing</string>
+    <string name="terms"><html>
+<style>
+span {
+    color: #00BFFF;
+}
+</style>
+	<body>
+	<p><b>La nueva línea no varía los<span> términos y</span></b></p>
+	<p><b><span>condiciones de tu tarjeta de crédito</span></b></p>
+	</body>
+</html>
+</string>
+
+
+</resources>

@@ -1,0 +1,41 @@
+{
+  "requestedAmount": {
+    "amount": 2500,
+    "currency": "MXN"
+  },
+  "rates": [
+    {
+      "rateType": {
+        "id": "CAT",
+        "name": "CAT"
+      },
+      "calculationDate": "2017-05-23",
+      "mode": {
+        "id": "PERCENTAGE"
+      },
+      "unit": {
+        "percentage": 38.2
+      }
+    }
+  ],
+  "terms": {
+    "number": 5,
+    "frequency": "MONTHLY"
+  },
+  "fees": {
+    "itemizeFees": [
+      {
+        "feeType": "DIRECT_PERIODIC",
+        "name": "Direct monthly",
+        "mode": {
+          "id": "AMOUNT",
+          "name": "Amount"
+        },
+        "itemizeFeeUnit": {
+          "amount": 0,
+          "currency": "MXN"
+        }
+      }
+    ]
+  }
+}
