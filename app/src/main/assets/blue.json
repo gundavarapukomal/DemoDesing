@@ -1,0 +1,110 @@
+{
+  "data": {
+    "cardId": "2105",
+    "number": "*05477",
+    "numberType": {
+      "id": "PAN",
+      "name": "Permanent Account Number"
+    },
+    "cardType": {
+      "id": "CREDIT_CARD",
+      "name": "Tarjeta de crédito"
+    },
+    "title": {
+      "id": "CREDIT_MX",
+      "name": "Tarjeta de crédito"
+    },
+    "alias": "Visa Infinite",
+    "brandAssociation": {
+      "id": "VISA",
+      "name": "VISA"
+    },
+    "physicalSupport": {
+      "id": "NORMAL_PLASTIC",
+      "name": "Plástico normal"
+    },
+    "expirationDate": "**/**",
+    "holderName": "Rubí Contreras Ballesteros",
+    "currencies": [
+      {
+        "currency": "MXN",
+        "isMajor": true
+      }
+    ],
+    "grantedCredits": [
+      {
+        "amount": 150000,
+        "currency": "MXN"
+      }
+    ],
+    "availableBalance": {
+      "currentBalances": [
+        {
+          "amount": 100000,
+          "currency": "MXN"
+        }
+      ],
+      "postedBalances": [
+        {
+          "amount": 100100.5,
+          "currency": "MXN"
+        }
+      ],
+      "pendingBalances": [
+        {
+          "amount": 100.5,
+          "currency": "MXN"
+        }
+      ]
+    },
+    "disposedBalance": {
+      "currentBalances": [
+        {
+          "amount": 50000,
+          "currency": "MXN"
+        }
+      ],
+      "postedBalances": [
+        {
+          "amount": 50100.5,
+          "currency": "MXN"
+        }
+      ],
+      "pendingBalances": [
+        {
+          "amount": -100.5,
+          "currency": "MXN"
+        }
+      ]
+    },
+    "status": {
+      "id": "OPERATIVE",
+      "name": "Operative card"
+    },
+    "images": [
+      {
+        "id": "FRONT_CARD",
+        "name": "Front face of the card",
+        "url": "https://openapi.bbva.com/ccds/covers?pg=Z1&BIN=553656&default_image=true&v=4&width=360&height=226&country=es&app_id=com.bbva.wallet&issue_date=20141001&country=cl"
+      },
+      {
+        "id": "BACK_CARD",
+        "name": "Back face of the card",
+        "url": "/imageBack.jpg"
+      }
+    ],
+    "bank": {
+      "id": "504",
+      "name": "BBVA Bancomer"
+    },
+    "cutOffDate": "2017-06-28T12:00:00Z",
+    "openingDate": "2016-07-01T11:31:45Z",
+    "activationDate": "2016-07-01T13:32:02Z",
+    "issueDate": "2016-07-01T12:05:13Z"
+  },
+  "apiInfo": {
+    "category": "products",
+    "name": "cards",
+    "version": "0.11.0"
+  }
+}
