@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -32,8 +33,9 @@ public class offerActivity1 extends Activity implements View.OnTouchListener, Ha
     private static final int CLICK_ON_URL = 2;
     private final Handler handler = new Handler(this);
     private EditText mEditText;
-
-    private boolean EditTExt_focuse=true;
+    private String mCat_id, mCat_name;
+    private boolean EditTExt_focuse = true;
+    private String mImages, mAlias, number, mgrantedCredits;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class offerActivity1 extends Activity implements View.OnTouchListener, Ha
             mEditText.setClickable(true);
             mEditText.setFocusable(true);
             mEditText.setSelected(true);
+            mEditText.setBackgroundResource(R.color.grycolor);
         } else {
             mEditText.setText("$50,000");
             mEditText.setCursorVisible(false);
@@ -67,6 +70,9 @@ public class offerActivity1 extends Activity implements View.OnTouchListener, Ha
 
         String fromAsset2 = loadJSONFromAsset("formate2.json");
         parseJsonF2(fromAsset2);
+
+        String fromAsset3 = loadJSONFromAsset("blue.json");
+        parseBlueHearder(fromAsset3);
 
         WebView wv = (WebView) findViewById(R.id.web_indx);
         client = new WebViewClient() {
@@ -87,7 +93,6 @@ public class offerActivity1 extends Activity implements View.OnTouchListener, Ha
         return super.onTouchEvent(event);
     }
 
-    private String mCat_id, mCat_name;
 
     /**
      * parsing json
@@ -165,6 +170,34 @@ public class offerActivity1 extends Activity implements View.OnTouchListener, Ha
         }
         return json;
     }
+
+
+    private void parseBlueHearder (String jsonFromAsset) {
+        try {
+            JSONObject jsonObj = new JSONObject(jsonFromAsset);
+            JSONObject jsonObject = jsonObj.getJSONObject("data");
+            number = jsonObject.getString("number");
+            mAlias = jsonObject.getString("alias");
+
+            JSONArray grantedCredits = jsonObject.getJSONArray("grantedCredits");
+            JSONObject jsonObjgrnt = grantedCredits.getJSONObject(0);
+            mgrantedCredits = jsonObjgrnt.getString("amount");
+
+
+            JSONArray JarryImages = jsonObject.getJSONArray("images");
+            JSONObject JarryImagesJSONObject = JarryImages.getJSONObject(0);
+            mImages = JarryImagesJSONObject.getString("url");
+
+            Log.e(TAG, number);
+            Log.e(TAG, mAlias);
+            Log.e(TAG, mgrantedCredits);
+            Log.e(TAG, mImages);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public boolean handleMessage (Message msg) {
