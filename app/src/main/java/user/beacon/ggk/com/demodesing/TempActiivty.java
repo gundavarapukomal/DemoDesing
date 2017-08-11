@@ -1,10 +1,14 @@
 package user.beacon.ggk.com.demodesing;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,6 +16,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * Created by komal.gundavarapu on 8/10/2017.
@@ -20,7 +26,8 @@ import java.io.InputStream;
 public class TempActiivty extends Activity {
 
     private static final String TAG = "TempActivity";
-    private String mImages, mAlias, number, mgrantedCredits;
+    private String mImagesUrl, mAlias, number, mgrantedCredits;
+    private ImageView mImageView;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -29,12 +36,13 @@ public class TempActiivty extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.temo);
+        mImageView = (ImageView) findViewById(R.id.img_id);
         String jsonFromAsset = loadJSONFromAsset("blue.json");
         parseBlueHearder(jsonFromAsset);
 
-        // json parsing done
-
-
+        // upto here we are getting all the four files , bt from the imageurl need to get bit map to set imageView for that creating asyncTask
+        ImageLoadTask loadTask = new ImageLoadTask(mImagesUrl, mImageView);
+        loadTask.execute();
     }
 
     private void parseBlueHearder (String jsonFromAsset) {
@@ -51,12 +59,12 @@ public class TempActiivty extends Activity {
 
             JSONArray JarryImages = jsonObject.getJSONArray("images");
             JSONObject JarryImagesJSONObject = JarryImages.getJSONObject(0);
-            mImages = JarryImagesJSONObject.getString("url");
+            mImagesUrl = JarryImagesJSONObject.getString("url");
 
             Log.e(TAG, number);
             Log.e(TAG, mAlias);
             Log.e(TAG, mgrantedCredits);
-            Log.e(TAG, mImages);
+            Log.e(TAG, mImagesUrl);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -77,5 +85,43 @@ public class TempActiivty extends Activity {
             return null;
         }
         return json;
+    }
+
+
+    /**
+     * This class is for loading imageview by passing imageurl and imageview as arguments to constrctor
+     */
+    private class ImageLoadTask extends AsyncTask<Void, Void, Bitmap> {
+
+        private String url;
+        private ImageView imageView;
+
+        public ImageLoadTask (String url, ImageView imageView) {
+            this.url = url;
+            this.imageView = imageView;
+        }
+
+        @Override
+        protected Bitmap doInBackground (Void... params) {
+            try {
+                URL urlConnection = new URL(url);
+                HttpURLConnection connection = (HttpURLConnection) urlConnection.openConnection();
+                connection.setDoInput(true);
+                connection.connect();
+                InputStream input = connection.getInputStream();
+                Bitmap myBitmap = BitmapFactory.decodeStream(input);
+                return myBitmap;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute (Bitmap result) {
+            super.onPostExecute(result);
+            imageView.setImageBitmap(result);
+        }
+
     }
 }
