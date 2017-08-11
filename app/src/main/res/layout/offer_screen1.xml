@@ -101,7 +101,8 @@
             android:textAlignment="center"
             android:textSize="18sp"
             android:drawableRight="@android:drawable/ic_delete"
-            android:background="@android:color/transparent"
+            android:background="#ddd"
+            android:padding="10dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Name"/>
