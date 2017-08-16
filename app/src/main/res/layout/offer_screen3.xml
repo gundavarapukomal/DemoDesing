@@ -16,8 +16,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:text="sdkjsdfsdfsd f"
+            android:layout_marginTop="35dp"
+            android:text="Operación exitosa"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="18sp"
@@ -30,7 +30,8 @@
             android:layout_below="@+id/tv_1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:text="sdkjsdfsdfsd f"
+            android:padding="5dp"
+            android:text="15 Abril 2016, 19:56 "
             android:textAlignment="center"
             android:textColor="@android:color/white"/>
 
@@ -42,10 +43,10 @@
             android:layout_below="@+id/tv_2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="sdkjsdfsdfsd f"
+            android:text="$ 25,000"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"/>
 
 
@@ -55,24 +56,15 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_3"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:text="sdkjsdfsdfsd f"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="15dp"
+            android:paddingBottom="20dp"
+            android:text=" Nueva línea de crédito "
             android:textAlignment="center"
             android:textColor="@android:color/white"/>
 
-        <View
-            android:id="@+id/tmpview"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/tv_4"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="20dp"
-            android:background="@android:color/white"></View>
 
     </RelativeLayout>
-
-
-
 
 
     <RelativeLayout
@@ -83,15 +75,27 @@
         android:layout_below="@+id/headr_r1"
         android:background="@color/white">
 
+
         <TextView
-            android:id="@+id/ftter_tv1"
+            android:id="@+id/tv_himg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="50dp"
+            android:text="Tarjeta Azul "
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
-            android:text=".1236"
+        <TextView
+            android:id="@+id/ftter_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_himg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text=".123456"
             android:textColor="@android:color/black"/>
 
 
@@ -101,8 +105,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/ftter_tv1"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text=".sdfsdfsdfsdfsd"
+            android:layout_marginTop="25dp"
+            android:text="Folio: 1234567890"
             android:textAlignment="center"
             android:textColor="@android:color/black"/>
 
@@ -133,16 +137,20 @@
             android:textStyle="bold"/>
 
         <Button
-            android:id="@+id/button_soilt"
+            android:id="@+id/ContinueButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="31dp"
+            android:layout_marginBottom="20dp"
             android:background="@color/offerlayout_bttn_color"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:text="Solicter"
+            android:paddingBottom="20dp"
+            android:paddingLeft="45dp"
+            android:paddingRight="45dp"
+            android:paddingTop="15dp"
+            android:text=" Salir "
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
             android:textStyle="bold"/>
 
     </RelativeLayout>
@@ -153,10 +161,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/footer_r2"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-20dp"
+        android:layout_marginBottom="-35dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/systemhelp"/>
-
+        android:src="@drawable/bttr1"/>
 
 
 </RelativeLayout>

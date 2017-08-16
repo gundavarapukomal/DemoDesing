@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 import org.json.JSONArray;
@@ -32,17 +34,21 @@ public class TempActiivty extends Activity {
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.temo);
-        mImageView = (ImageView) findViewById(R.id.img_id);
-        String jsonFromAsset = loadJSONFromAsset("blue.json");
-        parseBlueHearder(jsonFromAsset);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE|WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        setContentView(R.layout.activity_offer);
+//        mImageView = (ImageView) findViewById(R.id.img_id);
+//        String jsonFromAsset = loadJSONFromAsset("blue.json");
+//        parseBlueHearder(jsonFromAsset);
+//
+//        // upto here we are getting all the four files , bt from the imageurl need to get bit map to set imageView for that creating asyncTask
+//        ImageLoadTask loadTask = new ImageLoadTask(mImagesUrl, mImageView);
+//        loadTask.execute();
+        WebView wv = (WebView) findViewById(R.id.WebViewTNC);
 
-        // upto here we are getting all the four files , bt from the imageurl need to get bit map to set imageView for that creating asyncTask
-        ImageLoadTask loadTask = new ImageLoadTask(mImagesUrl, mImageView);
-        loadTask.execute();
+
+
+        wv.loadUrl("file:///android_asset/terms.html");
     }
 
     private void parseBlueHearder (String jsonFromAsset) {

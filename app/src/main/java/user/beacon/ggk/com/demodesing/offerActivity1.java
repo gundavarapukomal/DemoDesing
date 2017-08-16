@@ -40,31 +40,30 @@ public class offerActivity1 extends Activity implements View.OnTouchListener, Ha
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.offer_screen1);
         mEditText = (EditText) findViewById(R.id.txt_footer1);
 
-        if (EditTExt_focuse) {
-            mEditText.setText("$50,000");
-            mEditText.setCursorVisible(true);
-            mEditText.setLongClickable(true);
-            mEditText.setClickable(true);
-            mEditText.setFocusable(true);
-            mEditText.setSelected(true);
-            mEditText.setBackgroundResource(R.color.grycolor);
-        } else {
-            mEditText.setText("$50,000");
-            mEditText.setCursorVisible(false);
-            mEditText.setLongClickable(false);
-            mEditText.setClickable(false);
-            mEditText.setFocusable(false);
-            mEditText.setSelected(false);
-            mEditText.setKeyListener(null);
-            mEditText.setBackgroundResource(android.R.color.transparent);
-            mEditText.clearFocus();
-        }
+//        if (EditTExt_focuse) {
+//            mEditText.setText("$50,000");
+//            mEditText.setCursorVisible(true);
+//            mEditText.setLongClickable(true);
+//            mEditText.setClickable(true);
+//            mEditText.setFocusable(true);
+//            mEditText.setSelected(true);
+//            mEditText.setBackgroundResource(R.color.grycolor);
+//        } else {
+//            mEditText.setText("$50,000");
+//            mEditText.setCursorVisible(false);
+//            mEditText.setLongClickable(false);
+//            mEditText.setClickable(false);
+//            mEditText.setFocusable(false);
+//            mEditText.setSelected(false);
+//            mEditText.setKeyListener(null);
+//            mEditText.setBackgroundResource(android.R.color.transparent);
+//            mEditText.clearFocus();
+//        }
         String fromAsset1 = loadJSONFromAsset("formate1.json");
         parseJsonF1(fromAsset1);
 
